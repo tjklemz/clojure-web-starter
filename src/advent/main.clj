@@ -4,10 +4,20 @@
 (use 'ring.adapter.jetty)
 
 (defn split [l n]
-  (if (> n 0) (cons (first l) (split (rest l) (- n 1)))))
+  (if (and (> n 0) (> (count l) 0))
+    (cons (first l) (split (rest l) (- n 1)))))
+
+(defn convert-date-from-format [format]
+  (Integer. (.format (java.text.SimpleDateFormat. format) (java.util.Date.))))
+
+(defn get-year []
+  (convert-date-from-format "yyyy"))
 
 (defn get-month []
-  (Integer. (.format (java.text.SimpleDateFormat. "dd") (java.util.Date.))))
+  (convert-date-from-format "MM"))
+
+(defn get-day-of-month []
+  (convert-date-from-format "dd"))
 
 (def videos [{:name "Bob Harpford tells of a unique Santa Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
              {:name "Bob Harpford tells of a unique Reindeer Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
@@ -15,7 +25,9 @@
              {:name "Bob Harpford tells of a unique Egg Nog Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}])
 
 (defn get-videos []
-  {:videos (split videos 3)})
+  {:videos (if (> (get-year) 2013) videos
+             (if (> (get-month) 11) (split videos (get-day-of-month))
+               nil))})
 
 (defn main-handler []
     (render-file "main" (get-videos)))
