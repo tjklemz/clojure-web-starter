@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <style>
-          .current {
-            color: red;
+          #videos li:last-child {
+            color: blue;
           }
         </style>
     </head>
@@ -22,9 +22,9 @@
         <![endif]-->
 
 
-        <ul>
+        <ul id="videos">
           {{#videos}}
-          <li class="{{class}}">{{name}} <iframe width="420" height="315" src="{{url}}" frameborder="0" allowfullscreen></iframe></li>
+          <li>{{name}} <iframe width="252" height="189" src="{{url}}" frameborder="0" allowfullscreen></iframe></li>
           {{/videos}}
         </ul>
 

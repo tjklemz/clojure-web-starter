@@ -3,13 +3,19 @@
 (use 'compojure.core)
 (use 'ring.adapter.jetty)
 
-(def videos {:videos [{:name "Princess Bride" :url "//www.youtube.com/embed/Awf45u6zrP0"}
-                      {:name "Batman" :url "//www.youtube.com/embed/Awf45u6zrP0"}
-                      {:name "Lord of the Rings: Fellowship of the Ring"}
-                      {:name "Ferris Bueler" :class "current"}]})
+(defn split [l n]
+  (if (> n 0) (cons (first l) (split (rest l) (- n 1)))))
+
+(def videos [{:name "Bob Harpford tells of a unique Santa Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
+             {:name "Bob Harpford tells of a unique Reindeer Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
+             {:name "Bob Harpford tells of a unique Relatives Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
+             {:name "Bob Harpford tells of a unique Egg Nog Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}])
+
+(defn get-videos []
+  {:videos (split videos 3)})
 
 (defn main-handler []
-    (render-file "main" videos))
+    (render-file "main" (get-videos)))
 
 (defroutes my-app
     (GET "/" [] (main-handler))
