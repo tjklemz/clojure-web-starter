@@ -3,6 +3,7 @@
                  [compojure "1.1.6"]
                  [ring "1.2.1"]
                  [org.clojure/clojure "1.5.1"]]
-  :main advent.main
+  :plugins [[lein-ring "0.8.8"]]
+  :ring {:handler advent.main/my-app}
   :resource-paths ["templates"])
 

@@ -1,7 +1,10 @@
 (ns advent.main)
 (use 'stencil.core)
 (use 'compojure.core)
+(use 'compojure.route)
 (use 'ring.adapter.jetty)
+
+(stencil.loader/set-cache (clojure.core.cache/ttl-cache-factory {} :ttl 0))
 
 (defn split [l n]
   (if (and (> n 0) (> (count l) 0))
@@ -32,9 +35,13 @@
 (defn main-handler []
     (render-file "main" (get-videos)))
 
+(def root (str (System/getProperty "user.dir") "/public"))
+
 (defroutes my-app
+    (compojure.route/resources "/")
+    (compojure.route/files "/" (do (println root) {:root root}))
     (GET "/" [] (main-handler))
     (GET "/hi" [] "blah"))
 
-(defn -main [& args]
-    (run-jetty #'my-app {:port 3001}))
+;(defn -main [& args]
+;    (run-jetty #'my-app {:port 3001}))
