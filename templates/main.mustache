@@ -6,23 +6,53 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+    <div class="container">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="logo-banner">
+        </div>
+        <div class="featured">
+            <iframe width="100%" height="100%" src="{{featured}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <section class="header-copy">
+            <div class="intro">
+                <h2>Welcome to our holiday stories calendar.</h2>
+                <p>The Holidays bring some of the most memorable moments in life. There are tremendous stories of selflessness, generosity and the capacity for the human heart to show love to others. Often those stories have a healthy dose of laughter as well. The Springs Living is happy to bring you some stories from the amazing hearts that reside in our communities.</p>
+                <h2>We hope you enjoy, and may your holiday be one to remember.</h2>
+            </div>
+            <div class="social">
+                Share the stories...
+                <SOCIAL ICONS HERE>
+            </div>
+        </section>
+        <section class="advent">
+            <ol id="videos">
+              <li>
+              <ol>
+                  {{#videos}}
+                  <li class="video revealed"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</li>
+                  {{/videos}}
+              </ol>
+              </li>
+              <li>
+              <ol>
+              {{#upcoming}}
+                <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
+              {{/upcoming}}
+              </ol>
+              </li>
+            </ol>
+        </section>
+        <div class="footer">
+            <p>To learn more about The Springs Living, visit our homepage for communitites and contact information.</p>
+            <h2>Learn More</h2>
+        </div>
 
-        <h1>Welcome...</h1>
-        <ul id="videos">
-          {{#videos}}
-          <li>{{name}} <iframe width="252" height="189" src="{{url}}" frameborder="0" allowfullscreen></iframe></li>
-          {{/videos}}
-        </ul>
-
-        <h2>Goodbye...</h2>
+    </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>
 </html>

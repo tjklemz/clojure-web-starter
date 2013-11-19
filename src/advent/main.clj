@@ -6,6 +6,8 @@
 
 (stencil.loader/set-cache (clojure.core.cache/ttl-cache-factory {} :ttl 0))
 
+(def end-of-videos 25)
+
 (defn split [l n]
   (if (and (> n 0) (> (count l) 0))
     (cons (first l) (split (rest l) (- n 1)))))
@@ -22,15 +24,28 @@
 (defn get-day-of-month []
   (convert-date-from-format "dd"))
 
-(def videos [{:name "Bob Harpford tells of a unique Santa Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}
-             {:name "Bob Harpford tells of a unique Egg Nog Experience" :url "//www.youtube.com/embed/Awf45u6zrP0"}])
+(def videos [{:name "Bob Harpford tells of a unique Santa Experience" :day 1 :url "//www.youtube.com/embed/Ak--L4bYly0"}
+             {:name "Bob Harpford tells of a unique Reindeer Experience" :day 2 :url "//www.youtube.com/embed/Ak--L4bYly0"}
+             {:name "Bob Harpford tells of a unique Relatives Experience" :day 3 :url "//www.youtube.com/embed/Ak--L4bYly0"}
+             {:name "Bob Harpford tells of a unique Egg Nog Experience" :day 4 :url "//www.youtube.com/embed/Ak--L4bYly0"}])
+
+(def featured (videos 0))
+
+(def nonfeatured (rest videos))
+
+(defn get-revealed []
+  (split nonfeatured (- (get-day-of-month) 1)))
+
+(defn get-tile-range []
+  (range (+ (get-day-of-month) 1) end-of-videos))
 
 (defn get-videos []
-  {:videos (if (> (get-year) 2013) videos
-             (if (> (get-month) 11) (split videos (get-day-of-month))
-               nil))})
+  {:featured (featured :url)
+   :videos (if (> (get-year) 2013) nonfeatured
+             (if (and (> (get-month) 10) (> (get-day-of-month) 1)) (get-revealed)
+               nil))
+   :upcoming (get-tile-range)
+  })
 
 (defn main-handler []
     (render-file "main" (get-videos)))

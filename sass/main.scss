@@ -1,12 +1,60 @@
-// ---------------------------------------------------------------------------
-// Imports
+@import "susy";
 
-@import "base";
+$total-columns  : 2;
+$column-width   : 10em;
+$gutter-width   : 1em;
+$grid-padding   : 1em;
 
-/* -------------------------------------------------------------------------*/
-/* Layout */
+$show-grid-backgrounds  : true;
+
+$break : 3;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
 
 .container {
-  @include container;
-  @include susy-grid-background;
+  @include container($total-columns, $break);
+}
+
+h1 {
+  @include span-columns($total-columns, $break);
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.advent {
+  @include span-columns($total-columns);
+  background-color: #f9edd1;
+}
+
+#videos {
+  color: red;
+}
+
+.revealed {
+  @include span-columns(2, 2);
+}
+
+.tile {
+  @include isolate-grid(1);
+}
+
+@include at-breakpoint($break) {
+  .breaker { clear: none; width: 0; height: 0; }
+  .tile { @include span-columns(1); }
+  .revealed { @include span-columns(1); }
+  #videos ol li { @include isolate-grid(1); }
 }
