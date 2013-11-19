@@ -32,18 +32,18 @@
         <section class="advent">
             <ol id="videos">
               <li>
-              <ol>
-                  {{#videos}}
-                  <li class="video revealed"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</li>
-                  {{/videos}}
-              </ol>
+                  <ol>
+                      {{#videos}}
+                      <li class="video revealed"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</li>
+                      {{/videos}}
+                  </ol>
               </li>
               <li>
-              <ol>
-              {{#upcoming}}
-                <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
-              {{/upcoming}}
-              </ol>
+                  <ol>
+                      {{#upcoming}}
+                        <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
+                      {{/upcoming}}
+                  </ol>
               </li>
             </ol>
         </section>
