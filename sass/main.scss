@@ -59,3 +59,60 @@ li {
   .revealed { @include span-columns(1); }
   .video { @include isolate-grid(1); }
 }
+
+.sl-logo{
+  background: #A8FDA8 url("/img/sl_sprite.png") no-repeat  -267px 4px ;
+  width: 224px;
+  height:300px;
+  margin-left:30%;
+}
+
+.logo-banner{
+  background: #A8FDA8;
+  width: 100%;
+  height:425px;
+  text-align: center;
+  font: 50px Georgia,sans-serif;
+}
+
+.social{
+  width: 100%;
+  height:425px;
+
+}
+
+.social-icons-facebook{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -0px -74px ;
+  width: 70px;
+  height:77px;
+}
+
+.social-icons-facebook:hover{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -0px -150px ;
+  width: 70px;
+  height:77px;
+}
+
+.social-icons-twitter{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -88px -74px ;
+  width: 70px;
+  height:77px;
+}
+
+.social-icons-twitter:hover{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -88px -150px ;
+  width: 70px;
+  height:77px;
+}
+
+.social-icons-email{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -175px -74px ;
+  width: 70px;
+  height:77px;
+}
+
+.social-icons-email:hover{
+  background: #ffffff url("/img/sl_sprite.png") no-repeat  -175px -150px ;
+  width: 70px;
+  height:77px;
+}

@@ -14,6 +14,8 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="logo-banner">
+          <div class="sl-logo"></div>
+          STORIES OF HOLIDAYS PAST
         </div>
         <div class="featured">
             <iframe width="100%" height="100%" src="{{featured}}" frameborder="0" allowfullscreen></iframe>
@@ -26,7 +28,9 @@
             </div>
             <div class="social">
                 Share the stories...
-                <SOCIAL ICONS HERE>
+                <div class="social-icons-facebook"></div>
+                <div class="social-icons-twitter"></div>
+                <div class="social-icons-email"></div>
             </div>
         </section>
         <section class="advent">
@@ -34,7 +38,7 @@
               <li>
                   <ol>
                       {{#videos}}
-                      <li class="video revealed"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</li>
+                      <li class="video revealed"><a href="{{url}}"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</a></li>
                       {{/videos}}
                   </ol>
               </li>
