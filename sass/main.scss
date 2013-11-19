@@ -41,7 +41,7 @@ li {
 }
 
 #videos {
-  color: red;
+  color: black;
 }
 
 .revealed {
@@ -56,5 +56,5 @@ li {
   .breaker { clear: none; width: 0; height: 0; }
   .tile { @include span-columns(1); }
   .revealed { @include span-columns(1); }
-  #videos ol li { @include isolate-grid(1); }
+  .video { @include isolate-grid(1); }
 }
