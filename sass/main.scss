@@ -143,6 +143,8 @@ section, .featured {
   padding-bottom: 1em;
   font-size: 0.8em;
   position: absolute;
+  left: 0;
+  top: 98%;
 }
 
 .video-preview {
@@ -156,13 +158,16 @@ section, .featured {
 }
 
 .tile {
-  @include isolate-grid(1);
+  @include span-columns(1);
   margin-bottom: 1em;
+  &:nth-child(2n+1) {
+    margin-right: 0;
+    float: right;
+  }
 }
 
 @include at-breakpoint($break) {
-  .breaker { clear: none; width: 0; height: 0; }
-  .tile { @include span-columns(1); }
+  .tile { @include span-columns(1); &:nth-child(2n+1) { float: left; margin-right: -100%; }}
   .revealed { @include span-columns(1); }
   .video { @include isolate-grid(1); }
 }

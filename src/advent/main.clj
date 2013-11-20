@@ -6,7 +6,7 @@
 
 (stencil.loader/set-cache (clojure.core.cache/ttl-cache-factory {} :ttl 0))
 
-(def end-of-videos 25)
+(use 'advent.data)
 
 (defn split [l n]
   (if (and (> n 0) (> (count l) 0))
@@ -24,47 +24,31 @@
 (defn get-day-of-month []
   (convert-date-from-format "dd"))
 
-(def videos [{:name "Bob Harpford tells of a unique Santa Experience" :day "01" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "02" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "03" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "04" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "05" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "06" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "07" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "08" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "09" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "10" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "11" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "12" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "13" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "14" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "15" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "16" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "17" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "18" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "19" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "20" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "21" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Reindeer Experience" :day "22" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Relatives Experience" :day "23" :url "//www.youtube.com/embed/Ak--L4bYly0"}
-             {:name "Bob Harpford tells of a unique Egg Nog Experience" :day "24" :url "//www.youtube.com/embed/Ak--L4bYly0"}])
+(defn featured []
+  (videos 0))
 
-(def featured (videos 0))
+(defn nonfeatured []
+  (rest videos))
 
-(def nonfeatured (rest videos))
+(defn get-revealed-for-month []
+  (split (nonfeatured) (- (get-day-of-month) 1)))
 
 (defn get-revealed []
-  (split nonfeatured (- (get-day-of-month) 1)))
+  (if (> (get-year) 2013) (nonfeatured)
+    (if (and (>= (get-month) start-month) (> (get-day-of-month) 1)) (get-revealed-for-month)
+      nil)))
 
-(defn get-tile-range []
-  (range (+ (get-day-of-month) 1) end-of-videos))
+(defn get-upcoming-days [l n]
+  (if (< n (count l))
+    (cons (:day (l n)) (get-upcoming-days l (inc n)))))
+
+(defn get-upcoming-range []
+  (get-upcoming-days videos (inc (count (get-revealed)))))
 
 (defn get-videos []
-  {:featured (featured :url)
-   :videos (if (> (get-year) 2013) nonfeatured
-             (if (and (> (get-month) 10) (> (get-day-of-month) 1)) (get-revealed)
-               nil))
-   :upcoming (get-tile-range)
+  {:featured ((featured) :url)
+   :videos (get-revealed)
+   :upcoming (get-upcoming-range)
   })
 
 (defn main-handler []

@@ -46,8 +46,7 @@
         <section id="advent">
           <h2>A new video unlocked everyday!</h2>
           <p>Keep coming back! Everyday in December there will be a new video unlocked for you to enjoy.</p>
-          <ol id="videos">
-            <li>
+          
               <ol>
                 {{#videos}}
                   <li class="video revealed">
@@ -55,16 +54,12 @@
                     <span class="description">{{day}}. {{name}}</span>
                   </li>
                 {{/videos}}
-              </ol>
-            </li>
-            <li>
-              <ol>
+
                 {{#upcoming}}
                   <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
                 {{/upcoming}}
+                <div style="clear: both;"></div>
               </ol>
-            </li>
-          </ol>
         </section>
 
         <section id="footer-ad">
