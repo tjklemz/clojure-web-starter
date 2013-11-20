@@ -6,5 +6,6 @@
   :plugins [[lein-ring "0.8.8"]]
   :ring {:handler advent.main/my-app}
   :resource-paths ["templates"]
-  :uberjar-name "lsAdvent.jar")
+  :uberjar-name "lsAdvent.jar"
+  :min-lein-version "2.0.0")
 
