@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export GEM_HOME=$PWD/gems
+
+mkdir -p $GEM_HOME
+gem install compass
+
+$GEM_HOME/bin/compass compile 
+
+lein with-profile production compile :all
