@@ -3,15 +3,48 @@
 $total-columns  : 2;
 $column-width   : 10em;
 $gutter-width   : 1em;
-$grid-padding   : 1em;
+$grid-padding   : 2em;
+
+$spacing: $grid-padding;
 
 $show-grid-backgrounds  : true;
 
 $break : 3;
 
+$headline-font : 'IM Fell English', serif;
+$body-font : 'Merriweather', serif;
+
+$creme-color: #f9edd1;
+$nick-red-color: #63180e;
+$dark-brown-color: #3b2d23;
+$white-christmas-color: #fff;
+$light-christmas-green-color: #527040;
+$dark-chistmas-green-color: #324228;
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body, html, .background {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $body-font;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.background {
+  background-image: url(/img/sl_background.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  z-index: -1;
 }
 
 img {
@@ -19,12 +52,53 @@ img {
   width: 100%;
 }
 
-.container {
-  @include container($total-columns, $break);
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: $dark-brown-color;
+}
+
+a > img {
+  vertical-align: bottom;
 }
 
 h1 {
-  @include span-columns($total-columns, $break);
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h1, h2, h3 {
+  font-family: $headline-font;
+  font-weight: normal !important;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h2 {
+  color: $nick-red-color;
+  padding-bottom: 1em;
+}
+
+h3 {
+  color: $dark-chistmas-green-color;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-size: 1.75em;
+}
+
+p {
+  padding-bottom: 1em;
+}
+
+.container {
+  @include container($total-columns, $break);
 }
 
 ol {
@@ -35,22 +109,69 @@ li {
   display: inline-block;
 }
 
-.advent {
+section, .featured {
   margin: 0 0 -$grid-padding;
   padding: 0 $grid-padding;
-  background-color: #f9edd1;
+}
+
+#featured-video {
+  padding: 0;
+}
+
+#header-copy {
+  background-color: rgba($white-christmas-color, 0.85);
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+#advent {
+  background-color: rgba($creme-color, 0.85);
+  padding-top: $spacing;
+  padding-bottom: $spacing;
 }
 
 #videos {
   color: black;
 }
 
+#footer {
+  background-color: rgba($white-christmas-color, 0.85);
+}
+
+.description {
+  line-height: 1em;
+  padding-bottom: 1em;
+  font-size: 0.8em;
+}
+
+.video-preview {
+  padding-bottom: 1em;
+}
+
 .revealed {
   @include span-columns(2, 2);
+  position: relative;
+  margin-bottom: 2.5em;
+}
+
+.play-btn {
+  background: transparent url(/img/sl_sprite.png) no-repeat -73px 0px;
+  width: 72px;
+  height: 72px;
+  z-index: 100;
+  position: absolute;
+  right: 2%;
+  bottom: 34%;
+}
+
+.video-link:hover .play-btn {
+  background-position: 0 0;
+  cursor: pointer;
 }
 
 .tile {
   @include isolate-grid(1);
+  margin-bottom: 1em;
 }
 
 @include at-breakpoint($break) {
@@ -60,59 +181,88 @@ li {
   .video { @include isolate-grid(1); }
 }
 
-.sl-logo{
-  background: #A8FDA8 url("/img/sl_sprite.png") no-repeat  -267px 4px ;
-  width: 224px;
-  height:300px;
-  margin-left:30%;
+#first-impressions {
+  background: rgba($light-christmas-green-color, 0.85);
+  color: $creme-color;
+  padding-top: $spacing;
+  padding-bottom: $spacing;
 }
 
-.logo-banner{
-  background: #A8FDA8;
+.sl-logo {
+  background: transparent url("/img/sl_sprite.png") no-repeat -500px 0px;
+  width: 116px;
+  height: 132px;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+.logo-banner {
   width: 100%;
-  height:425px;
+}
+
+.logo-banner h1 {
   text-align: center;
-  font: 50px Georgia,sans-serif;
+  width: 95%;
+  margin: 0 auto;
+  line-height: 1.15em;
 }
 
-.social{
+.social {
   width: 100%;
-  height:425px;
-
 }
 
-.social-icons-facebook{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -0px -74px ;
-  width: 70px;
-  height:77px;
+$social-icons : facebook twitter email;
+
+@each $social in $social-icons {
+  .#{$social} {
+    background-image: url(/img/buttons/button_#{$social}_off.png);
+  }
+
+  .#{$social}:hover {
+    background-image: url(/img/buttons/button_#{$social}_on.png);
+  }
 }
 
-.social-icons-facebook:hover{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -0px -150px ;
+.social-icon {
   width: 70px;
-  height:77px;
+  height: 77px;
+  float: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin-right: 0.55em;
 }
 
-.social-icons-twitter{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -88px -74px ;
-  width: 70px;
-  height:77px;
+.social-icon:hover {
+  cursor: pointer;
 }
 
-.social-icons-twitter:hover{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -88px -150px ;
-  width: 70px;
-  height:77px;
+#footer-ad {
+  padding: 0;
 }
 
-.social-icons-email{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -175px -74px ;
-  width: 70px;
-  height:77px;
+#footer-ad > img {
+  vertical-align: bottom;
 }
 
-.social-icons-email:hover{
-  background: #ffffff url("/img/sl_sprite.png") no-repeat  -175px -150px ;
+#footer {
+  padding-top: $spacing;
+  padding-bottom: $spacing/2;
+}
+
+#footer h2 {
+  float: left;
+  line-height: 77px;
+  text-transform: uppercase;
+  padding-right: 1em;
+}
+
+.learn-more {
   width: 70px;
-  height:77px;
+  height: 77px;
+  float: left;
+  background-image: url("/img/sl_sprite.png");
+  background-repeat: none;
+  background-color: transparent;
+  background-position: 0px -230px;
 }

@@ -5,58 +5,79 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-    <div class="container">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="logo-banner">
-          <div class="sl-logo"></div>
-          STORIES OF HOLIDAYS PAST
-        </div>
-        <div class="featured">
-            <iframe width="100%" height="100%" src="{{featured}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <section class="header-copy">
+      <div class="background">
+      </div>
+
+      <div class="container">
+      
+        <section id="first-impressions">
+          <div class="logo-banner">
+            <div class="sl-logo"></div>
+            <h1>Stories of Holidays&nbsp;Past</h1>
+          </div>
+        </section>
+
+        <section id="featured-video">
+          <a href="{{featured}}"><img src="img/featured_video.jpg"></a>
+        </section>
+
+        <section id="header-copy">
             <div class="intro">
-                <h2>Welcome to our holiday stories calendar.</h2>
-                <p>The Holidays bring some of the most memorable moments in life. There are tremendous stories of selflessness, generosity and the capacity for the human heart to show love to others. Often those stories have a healthy dose of laughter as well. The Springs Living is happy to bring you some stories from the amazing hearts that reside in our communities.</p>
-                <h2>We hope you enjoy, and may your holiday be one to remember.</h2>
+              <h2>Welcome to our holiday stories calendar.</h2>
+              <p>The Holidays bring some of the most memorable moments in life. There are tremendous stories of selflessness, generosity and the capacity for the human heart to show love to others. Often those stories have a healthy dose of laughter as well. The Springs Living is happy to bring you some stories from the amazing hearts that reside in our communities.</p>
+              <h2>We hope you enjoy, and may your holiday be one to remember.</h2>
             </div>
             <div class="social">
-                Share the stories...
-                <div class="social-icons-facebook"></div>
-                <div class="social-icons-twitter"></div>
-                <div class="social-icons-email"></div>
+              <h3>Share the stories...</h3>
+              <a href= ><div class="social-icon facebook"></div></a>
+              <div class="social-icon twitter"></div>
+              <a href="mailto:?subject=Check out these amazing Holiday videos!&body=The Springs Living has made short videos about their residence's favorite holiday memories! I hope you enjoy as much as I did! http://tjklemz-mac.local:3001
+"><span class="social-icon email"></span></a>
+              <div style="clear: both"></div>
             </div>
         </section>
-        <section class="advent">
-            <ol id="videos">
-              <li>
-                  <ol>
-                      {{#videos}}
-                      <li class="video revealed"><a href="{{url}}"><img src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"> {{name}}</a></li>
-                      {{/videos}}
-                  </ol>
-              </li>
-              <li>
-                  <ol>
-                      {{#upcoming}}
-                        <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
-                      {{/upcoming}}
-                  </ol>
-              </li>
-            </ol>
-        </section>
-        <div class="footer">
-            <p>To learn more about The Springs Living, visit our homepage for communitites and contact information.</p>
-            <h2>Learn More</h2>
-        </div>
 
-    </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <section id="advent">
+          <ol id="videos">
+            <li>
+              <ol>
+                {{#videos}}
+                  <li class="video revealed">
+                    <a class="video-link" href="{{url}}"><img class="video-preview" src="img/calendar_boxes/calendar_boxes_{{day}}.gif" alt="Day {{day}}"><div class="play-btn"></div></a>
+                    <span class="description">{{day}}. {{name}}</span>
+                  </li>
+                {{/videos}}
+              </ol>
+            </li>
+            <li>
+              <ol>
+                {{#upcoming}}
+                  <li class="video tile"><img src="img/calendar_boxes/calendar_boxes_{{.}}.gif" alt="Day {{.}}"></li>
+                {{/upcoming}}
+              </ol>
+            </li>
+          </ol>
+        </section>
+
+        <section id="footer-ad">
+          <img src="img/sl_footer_ad.jpg">
+        </section>
+
+        <section id="footer">
+          <p>To learn more about The Springs Living, visit our homepage for communitites and contact information.</p>
+          <a href="http://www.thespringsliving.com/">
+            <h2>Learn More</h2>
+            <span class="learn-more"></span>
+          </a>
+          <div style="clear: both"></div>
+        </section>
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>
 </html>
