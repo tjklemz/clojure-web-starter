@@ -139,9 +139,10 @@ section, .featured {
 }
 
 .description {
-  line-height: 1em;
+  line-height: 1.25em;
   padding-bottom: 1em;
   font-size: 0.8em;
+  position: absolute;
 }
 
 .video-preview {
@@ -151,22 +152,7 @@ section, .featured {
 .revealed {
   @include span-columns(2, 2);
   position: relative;
-  margin-bottom: 2.5em;
-}
-
-.play-btn {
-  background: transparent url(/img/sl_sprite.png) no-repeat -73px 0px;
-  width: 72px;
-  height: 72px;
-  z-index: 100;
-  position: absolute;
-  right: 2%;
-  bottom: 34%;
-}
-
-.video-link:hover .play-btn {
-  background-position: 0 0;
-  cursor: pointer;
+  margin-bottom: 4.25em;
 }
 
 .tile {
@@ -207,19 +193,35 @@ section, .featured {
   line-height: 1.15em;
 }
 
+.play {
+  width: 25%;
+  height: 25%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -6%;
+  top: 58%;
+}
+
+.video-link:hover .play {
+  background-image: url(/img/buttons/button_play_on.png);
+  cursor: pointer;
+}
+
 .social {
   width: 100%;
 }
 
-$social-icons : facebook twitter email;
+$icons : facebook twitter email play arrow;
 
-@each $social in $social-icons {
-  .#{$social} {
-    background-image: url(/img/buttons/button_#{$social}_off.png);
+@each $icon in $icons {
+  .#{$icon} {
+    background: transparent url(/img/buttons/button_#{$icon}_off.png) no-repeat;
+    background-size: contain;
   }
 
-  .#{$social}:hover {
-    background-image: url(/img/buttons/button_#{$social}_on.png);
+  .#{$icon}:hover {
+    background-image: url(/img/buttons/button_#{$icon}_on.png);
   }
 }
 
@@ -227,9 +229,6 @@ $social-icons : facebook twitter email;
   width: 70px;
   height: 77px;
   float: left;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
   margin-right: 0.55em;
 }
 
@@ -257,12 +256,8 @@ $social-icons : facebook twitter email;
   padding-right: 1em;
 }
 
-.learn-more {
+.arrow {
   width: 70px;
   height: 77px;
   float: left;
-  background-image: url("/img/sl_sprite.png");
-  background-repeat: none;
-  background-color: transparent;
-  background-position: 0px -230px;
 }
