@@ -75,8 +75,4 @@
 (defroutes my-app
     (compojure.route/resources "/")
     (compojure.route/files "/" (do (println root) {:root root}))
-    (GET "/" [] (main-handler))
-    (GET "/hi" [] "blah"))
-
-;(defn -main [& args]
-;    (run-jetty #'my-app {:port 3001}))
+    (GET "/" [] (main-handler)))
