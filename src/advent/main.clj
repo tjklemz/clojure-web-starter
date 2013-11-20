@@ -60,3 +60,6 @@
     (compojure.route/resources "/")
     (compojure.route/files "/" (do (println root) {:root root}))
     (GET "/" [] (main-handler)))
+
+(defn -main [port]
+  (run-jetty my-app {:port (Integer. port) :join? false}))

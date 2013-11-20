@@ -5,5 +5,6 @@
                  [org.clojure/clojure "1.5.1"]]
   :plugins [[lein-ring "0.8.8"]]
   :ring {:handler advent.main/my-app}
-  :resource-paths ["templates"])
+  :resource-paths ["templates"]
+  :uberjar-name "lsAdvent.jar")
 
