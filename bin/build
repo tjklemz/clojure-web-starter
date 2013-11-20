@@ -3,8 +3,10 @@
 export GEM_HOME=$PWD/gems
 
 mkdir -p $GEM_HOME
-gem install compass
 
-$GEM_HOME/bin/compass compile 
+LC_ALL=en_US.UTF-8 gem install bundler
+
+$GEM_HOME/bin/bundle install
+$GEM_HOME/bin/bundle exec compass compile
 
 lein with-profile production compile :all
