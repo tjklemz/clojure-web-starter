@@ -1,0 +1,466 @@
+/* line 24, ../../sass/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 29, ../../sass/main.scss */
+body, html, .background {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 34, ../../sass/main.scss */
+body {
+  font-family: "Merriweather", serif;
+}
+
+/* line 38, ../../sass/main.scss */
+p {
+  font-size: 0.9em;
+}
+
+/* line 42, ../../sass/main.scss */
+.background {
+  background-image: url(/img/sl_background.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  z-index: -1;
+}
+
+/* line 50, ../../sass/main.scss */
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 58, ../../sass/main.scss */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #3b2d23;
+}
+
+/* line 63, ../../sass/main.scss */
+a > img {
+  vertical-align: bottom;
+}
+
+/* line 67, ../../sass/main.scss */
+h1 {
+  font-size: 1.4em;
+}
+
+/* line 71, ../../sass/main.scss */
+h2 {
+  font-size: 1.2em;
+}
+
+/* line 75, ../../sass/main.scss */
+h1, h2, h3 {
+  font-family: "IM Fell English", serif;
+  font-weight: normal !important;
+}
+
+/* line 80, ../../sass/main.scss */
+h1, h2 {
+  text-transform: uppercase;
+}
+
+/* line 84, ../../sass/main.scss */
+h2 {
+  color: #63180e;
+  padding-bottom: 1em;
+}
+
+/* line 89, ../../sass/main.scss */
+h3 {
+  color: #324228;
+  padding-bottom: 0.5em;
+  font-size: 1.75em;
+}
+
+/* line 95, ../../sass/main.scss */
+p {
+  padding-bottom: 1em;
+}
+
+/* line 99, ../../sass/main.scss */
+.container {
+  *zoom: 1;
+  max-width: 21em;
+  _width: 21em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 32em) {
+  /* line 99, ../../sass/main.scss */
+  .container {
+    max-width: 32em;
+  }
+}
+
+/* line 103, ../../sass/main.scss */
+ol {
+  list-style: none;
+}
+
+/* line 107, ../../sass/main.scss */
+li {
+  display: inline-block;
+}
+
+/* line 111, ../../sass/main.scss */
+section, .featured {
+  margin: 0 -2em;
+  padding: 0 2em;
+}
+
+/* line 116, ../../sass/main.scss */
+#featured-video {
+  padding: 0;
+}
+
+/* line 120, ../../sass/main.scss */
+#header-copy {
+  width: 100%;
+  float: left;
+  margin-right: 4.7619%;
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* line 127, ../../sass/main.scss */
+#advent {
+  width: 100%;
+  float: left;
+  margin-right: 4.7619%;
+  display: inline;
+  background-color: rgba(249, 237, 209, 0.85);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* line 134, ../../sass/main.scss */
+#videos {
+  color: black;
+}
+
+/* line 138, ../../sass/main.scss */
+#footer {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* line 142, ../../sass/main.scss */
+.description {
+  line-height: 1.25em;
+  padding-bottom: 1em;
+  font-size: 0.8em;
+  position: absolute;
+  left: 0;
+  top: 98%;
+}
+
+/* line 151, ../../sass/main.scss */
+.video-preview {
+  padding-bottom: 1em;
+}
+
+/* line 155, ../../sass/main.scss */
+.revealed {
+  width: 100%;
+  float: left;
+  margin-right: 4.7619%;
+  display: inline;
+  position: relative;
+  margin-bottom: 4.25em;
+}
+
+/* line 161, ../../sass/main.scss */
+.tile {
+  width: 47.61905%;
+  float: left;
+  margin-right: 4.7619%;
+  display: inline;
+  margin-bottom: 1em;
+}
+/* line 164, ../../sass/main.scss */
+.tile:nth-child(2n+1) {
+  margin-right: 0;
+  float: right;
+}
+
+/* line 170, ../../sass/main.scss */
+.social {
+  padding-top: 1em;
+}
+
+/* line 174, ../../sass/main.scss */
+#first-impressions {
+  background: rgba(82, 112, 64, 0.85);
+  color: #f9edd1;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* line 181, ../../sass/main.scss */
+.sl-logo {
+  background: transparent url("/img/sl_sprite.png") no-repeat -500px 0px;
+  width: 116px;
+  height: 132px;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+/* line 189, ../../sass/main.scss */
+.logo-banner {
+  width: 100%;
+}
+
+/* line 193, ../../sass/main.scss */
+.logo-banner h1 {
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  line-height: 1.15em;
+}
+
+/* line 200, ../../sass/main.scss */
+.play {
+  width: 25%;
+  height: 25%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -6%;
+  top: 58%;
+}
+
+/* line 210, ../../sass/main.scss */
+.video-link:hover .play {
+  background-image: url(/img/buttons/button_play_on.png);
+  cursor: pointer;
+}
+
+/* line 218, ../../sass/main.scss */
+.facebook {
+  background: transparent url(/img/buttons/button_facebook_off.png) no-repeat;
+  background-size: contain;
+}
+
+/* line 223, ../../sass/main.scss */
+.facebook:hover {
+  background-image: url(/img/buttons/button_facebook_on.png);
+}
+
+/* line 218, ../../sass/main.scss */
+.twitter {
+  background: transparent url(/img/buttons/button_twitter_off.png) no-repeat;
+  background-size: contain;
+}
+
+/* line 223, ../../sass/main.scss */
+.twitter:hover {
+  background-image: url(/img/buttons/button_twitter_on.png);
+}
+
+/* line 218, ../../sass/main.scss */
+.email {
+  background: transparent url(/img/buttons/button_email_off.png) no-repeat;
+  background-size: contain;
+}
+
+/* line 223, ../../sass/main.scss */
+.email:hover {
+  background-image: url(/img/buttons/button_email_on.png);
+}
+
+/* line 218, ../../sass/main.scss */
+.play {
+  background: transparent url(/img/buttons/button_play_off.png) no-repeat;
+  background-size: contain;
+}
+
+/* line 223, ../../sass/main.scss */
+.play:hover {
+  background-image: url(/img/buttons/button_play_on.png);
+}
+
+/* line 218, ../../sass/main.scss */
+.arrow {
+  background: transparent url(/img/buttons/button_arrow_off.png) no-repeat;
+  background-size: contain;
+}
+
+/* line 223, ../../sass/main.scss */
+.arrow:hover {
+  background-image: url(/img/buttons/button_arrow_on.png);
+}
+
+/* line 228, ../../sass/main.scss */
+.social-icon {
+  width: 70px;
+  height: 77px;
+  float: left;
+  margin-right: 0.55em;
+}
+
+/* line 235, ../../sass/main.scss */
+.social-icon:hover {
+  cursor: pointer;
+}
+
+/* line 239, ../../sass/main.scss */
+#footer-ad {
+  padding: 0;
+}
+
+/* line 243, ../../sass/main.scss */
+#footer-ad > img {
+  vertical-align: bottom;
+}
+
+/* line 247, ../../sass/main.scss */
+#footer {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+/* line 252, ../../sass/main.scss */
+#footer h2 {
+  float: left;
+  line-height: 77px;
+  text-transform: uppercase;
+  padding-right: 1em;
+}
+
+/* line 259, ../../sass/main.scss */
+.arrow {
+  width: 70px;
+  height: 77px;
+  float: left;
+}
+
+@media (min-width: 32em) {
+  /* line 267, ../../sass/main.scss */
+  h3 {
+    font-size: 1.6em;
+  }
+
+  /* line 271, ../../sass/main.scss */
+  .intro p {
+    padding-right: 2em;
+    font-size: 86%;
+    line-height: 1.5em;
+  }
+
+  /* line 277, ../../sass/main.scss */
+  .container {
+    max-width: 43em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 38, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* line 281, ../../sass/main.scss */
+  .intro {
+    width: 65.11628%;
+    float: left;
+    margin-right: 4.65116%;
+  }
+
+  /* line 285, ../../sass/main.scss */
+  .social {
+    width: 30.23256%;
+    float: right;
+    margin-right: 0;
+  }
+
+  /* line 289, ../../sass/main.scss */
+  .social-icon {
+    margin-right: 0.45em;
+    width: 58px;
+  }
+
+  /* line 293, ../../sass/main.scss */
+  .tile {
+    width: 30.23256%;
+    float: left;
+    margin-right: 4.65116%;
+  }
+  /* line 293, ../../sass/main.scss */
+  .tile:nth-child(2n+1) {
+    float: left;
+    margin-right: -100%;
+  }
+
+  /* line 294, ../../sass/main.scss */
+  .revealed {
+    width: 30.23256%;
+    float: left;
+    margin-right: 4.65116%;
+  }
+
+  /* line 295, ../../sass/main.scss */
+  .video {
+    width: 30.23256%;
+    float: left;
+    margin-right: 4.65116%;
+    margin-right: -100%;
+  }
+  /* line 42, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/susy-1.0.9/sass/susy/_isolation.scss */
+  .video:nth-child(3n + 1) {
+    margin-left: 0%;
+    clear: left;
+  }
+  /* line 42, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/susy-1.0.9/sass/susy/_isolation.scss */
+  .video:nth-child(3n + 2) {
+    margin-left: 34.88372%;
+    clear: none;
+  }
+  /* line 42, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/susy-1.0.9/sass/susy/_isolation.scss */
+  .video:nth-child(3n + 3) {
+    margin-left: 69.76744%;
+    clear: none;
+  }
+
+  /* line 297, ../../sass/main.scss */
+  #footer-ad {
+    width: 65.11628%;
+    float: left;
+    margin-right: 4.65116%;
+  }
+
+  /* line 300, ../../sass/main.scss */
+  #footer {
+    width: 30.23256%;
+    float: right;
+    margin-right: 0;
+    padding-bottom: 0;
+    margin: 0 -2em;
+  }
+  /* line 305, ../../sass/main.scss */
+  #footer h2 {
+    padding: 0;
+  }
+}
