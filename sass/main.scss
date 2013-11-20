@@ -88,7 +88,6 @@ h2 {
 
 h3 {
   color: $dark-chistmas-green-color;
-  padding-top: 1em;
   padding-bottom: 0.5em;
   font-size: 1.75em;
 }
@@ -119,12 +118,14 @@ section, .featured {
 }
 
 #header-copy {
+  @include span-columns($total-columns);
   background-color: rgba($white-christmas-color, 0.85);
   padding-top: $spacing;
   padding-bottom: $spacing;
 }
 
 #advent {
+  @include span-columns($total-columns);
   background-color: rgba($creme-color, 0.85);
   padding-top: $spacing;
   padding-bottom: $spacing;
@@ -166,10 +167,8 @@ section, .featured {
   }
 }
 
-@include at-breakpoint($break) {
-  .tile { @include span-columns(1); &:nth-child(2n+1) { float: left; margin-right: -100%; }}
-  .revealed { @include span-columns(1); }
-  .video { @include isolate-grid(1); }
+.social {
+  padding-top: 1em;
 }
 
 #first-impressions {
@@ -211,10 +210,6 @@ section, .featured {
 .video-link:hover .play {
   background-image: url(/img/buttons/button_play_on.png);
   cursor: pointer;
-}
-
-.social {
-  width: 100%;
 }
 
 $icons : facebook twitter email play arrow;
@@ -265,4 +260,50 @@ $icons : facebook twitter email play arrow;
   width: 70px;
   height: 77px;
   float: left;
+}
+
+@include at-breakpoint($break) {
+  @include with-grid-settings($break,13em, 2em) {
+    h3 {
+      font-size: 1.6em;
+    }
+
+    .intro p {
+      padding-right: 2em;
+      font-size: 86%;
+      line-height: 1.5em;
+    }
+
+    .container {
+      @include container;
+    }
+
+    .intro {
+      @include span-columns(2);
+    }
+
+    .social {
+      @include span-columns(1 omega);
+    }
+
+    .social-icon {
+      margin-right: 0.45em;
+      width: 58px;
+    }
+    .tile { @include span-columns(1); &:nth-child(2n+1) { float: left; margin-right: -100%; }}
+    .revealed { @include span-columns(1); }
+    .video { @include isolate-grid(1); }
+
+    #footer-ad { 
+      @include span-columns(2); 
+    }
+    #footer { 
+      @include span-columns(1 omega); 
+      padding-bottom: 0;
+      margin: 0 (-$spacing);
+
+      h2 { padding: 0}
+    }
+  }
+
 }

@@ -1,6 +1,6 @@
 (ns advent.data)
 
-(def start-month 12)
+(def start-month 11)
 
 (def videos [{:name "Bob Harpford tells of a unique Santa Experience" :day "01" :url "//www.youtube.com/embed/Ak--L4bYly0"}
              {:name "Bob Harpford tells of a unique Reindeer Experience" :day "02" :url "//www.youtube.com/embed/Ak--L4bYly0"}
