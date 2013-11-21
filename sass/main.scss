@@ -281,6 +281,23 @@ $icons : facebook twitter email play arrow;
     .intro {
       @include span-columns(2);
     }
+    #first-impressions{
+      @include span-columns($total-columns);
+      h1{
+         display: inline;
+        float: left !important;
+        @include span-columns(2 omega);
+        padding: 2.5em 0 0 0;
+
+      }
+      .sl-logo{
+        @include span-columns(1);
+        display:block;
+        padding: 0em ;
+        margin: 0em;
+        margin-right: -8em;
+      }
+    }
 
     .social {
       @include span-columns(1 omega);
