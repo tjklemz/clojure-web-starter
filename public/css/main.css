@@ -159,11 +159,6 @@ section, .featured {
   color: black;
 }
 
-/* line 138, ../../sass/main.scss */
-#footer {
-  background-color: rgba(255, 255, 255, 0.85);
-}
-
 /* line 142, ../../sass/main.scss */
 .description {
   line-height: 1.25em;
@@ -323,23 +318,46 @@ section, .featured {
   cursor: pointer;
 }
 
-/* line 239, ../../sass/main.scss */
-#footer-ad {
+/* line 240, ../../sass/main.scss */
+.arrow {
+  width: 70px;
+  height: 77px;
+  float: left;
+}
+
+/* line 246, ../../sass/main.scss */
+#footer {
+  *zoom: 1;
+  max-width: 40em;
+  _width: 40em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0em 0em 0em 0em !important;
+}
+/* line 38, ../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 256, ../../sass/main.scss */
+#footer #footer-ad {
+  margin: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
   padding: 0;
 }
-
-/* line 243, ../../sass/main.scss */
-#footer-ad > img {
+/* line 263, ../../sass/main.scss */
+#footer #footer-ad > img {
   vertical-align: bottom;
+  width: 100%;
+  padding: 0;
+  margin: 0 !important;
 }
-
-/* line 247, ../../sass/main.scss */
-#footer {
-  padding-top: 2em;
-  padding-bottom: 1em;
-}
-
-/* line 252, ../../sass/main.scss */
+/* line 271, ../../sass/main.scss */
 #footer h2 {
   float: left;
   line-height: 77px;
@@ -347,27 +365,20 @@ section, .featured {
   padding-right: 1em;
 }
 
-/* line 259, ../../sass/main.scss */
-.arrow {
-  width: 70px;
-  height: 77px;
-  float: left;
-}
-
 @media (min-width: 32em) {
-  /* line 267, ../../sass/main.scss */
+  /* line 282, ../../sass/main.scss */
   h3 {
     font-size: 1.6em;
   }
 
-  /* line 271, ../../sass/main.scss */
+  /* line 286, ../../sass/main.scss */
   .intro p {
     padding-right: 2em;
     font-size: 86%;
     line-height: 1.5em;
   }
 
-  /* line 277, ../../sass/main.scss */
+  /* line 292, ../../sass/main.scss */
   .container {
     max-width: 43em;
     padding-left: 2em;
@@ -382,20 +393,20 @@ section, .featured {
     clear: both;
   }
 
-  /* line 281, ../../sass/main.scss */
+  /* line 296, ../../sass/main.scss */
   .intro {
     width: 65.11628%;
     float: left;
     margin-right: 4.65116%;
   }
 
-  /* line 284, ../../sass/main.scss */
+  /* line 299, ../../sass/main.scss */
   #first-impressions {
     width: 100%;
     float: left;
     margin-right: 4.65116%;
   }
-  /* line 286, ../../sass/main.scss */
+  /* line 301, ../../sass/main.scss */
   #first-impressions h1 {
     display: inline;
     width: 65.11628%;
@@ -403,7 +414,7 @@ section, .featured {
     margin-right: 0;
     padding: 2.5em 0 0 0;
   }
-  /* line 292, ../../sass/main.scss */
+  /* line 307, ../../sass/main.scss */
   #first-impressions .sl-logo {
     width: 30.23256%;
     float: left;
@@ -414,39 +425,39 @@ section, .featured {
     margin-right: -6em;
   }
 
-  /* line 301, ../../sass/main.scss */
+  /* line 316, ../../sass/main.scss */
   .social {
     width: 30.23256%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 305, ../../sass/main.scss */
+  /* line 320, ../../sass/main.scss */
   .social-icon {
     margin-right: 0.45em;
     width: 58px;
   }
 
-  /* line 309, ../../sass/main.scss */
+  /* line 324, ../../sass/main.scss */
   .tile {
     width: 30.23256%;
     float: left;
     margin-right: 4.65116%;
   }
-  /* line 309, ../../sass/main.scss */
+  /* line 324, ../../sass/main.scss */
   .tile:nth-child(2n+1) {
     float: left;
     margin-right: -100%;
   }
 
-  /* line 310, ../../sass/main.scss */
+  /* line 325, ../../sass/main.scss */
   .revealed {
     width: 30.23256%;
     float: left;
     margin-right: 4.65116%;
   }
 
-  /* line 311, ../../sass/main.scss */
+  /* line 326, ../../sass/main.scss */
   .video {
     width: 30.23256%;
     float: left;
@@ -468,29 +479,9 @@ section, .featured {
     margin-left: 69.76744%;
     clear: none;
   }
-
-  /* line 313, ../../sass/main.scss */
-  #footer-ad {
-    width: 65.11628%;
-    float: left;
-    margin-right: 4.65116%;
-  }
-
-  /* line 316, ../../sass/main.scss */
-  #footer {
-    width: 30.23256%;
-    float: right;
-    margin-right: 0;
-    padding-bottom: 0;
-    margin: 0 -2em;
-  }
-  /* line 321, ../../sass/main.scss */
-  #footer h2 {
-    padding: 0;
-  }
 }
 @media (min-width: 43em) {
-  /* line 327, ../../sass/main.scss */
+  /* line 333, ../../sass/main.scss */
   h1 {
     display: inline;
     float: left !important;
@@ -500,7 +491,7 @@ section, .featured {
     padding: 2.5em 0 0 0;
   }
 
-  /* line 334, ../../sass/main.scss */
+  /* line 340, ../../sass/main.scss */
   .sl-logo {
     width: 23.25581%;
     float: left;

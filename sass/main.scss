@@ -135,9 +135,9 @@ section, .featured {
   color: black;
 }
 
-#footer {
-  background-color: rgba($white-christmas-color, 0.85);
-}
+//#footer {
+//  background-color: rgba($white-christmas-color, 0.85);
+//}
 
 .description {
   line-height: 1.25em;
@@ -236,25 +236,6 @@ $icons : facebook twitter email play arrow;
   cursor: pointer;
 }
 
-#footer-ad {
-  padding: 0;
-}
-
-#footer-ad > img {
-  vertical-align: bottom;
-}
-
-#footer {
-  padding-top: $spacing;
-  padding-bottom: $spacing/2;
-}
-
-#footer h2 {
-  float: left;
-  line-height: 77px;
-  text-transform: uppercase;
-  padding-right: 1em;
-}
 
 .arrow {
   width: 70px;
@@ -262,6 +243,40 @@ $icons : facebook twitter email play arrow;
   float: left;
 }
 
+#footer{
+
+  @include with-grid-settings($break, 13em, 0.5em) {
+    @include container;
+    background-color: rgba($white-christmas-color, 0.85);
+    padding: 0em 0em 0em 0em !important;
+    //width: 100%;
+    //margin-right: 0;
+    //margin-left: 0;
+
+    #footer-ad {
+      margin: 0 !important;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+      padding: 0;
+    }
+
+    #footer-ad > img {
+      vertical-align: bottom;
+      width: 100%;
+      padding: 0;
+      margin: 0 !important;
+    }
+
+
+    h2 {
+      float: left;
+      line-height: 77px;
+      text-transform: uppercase;
+      padding-right: 1em;
+    }
+
+  }
+}
 @include at-breakpoint($break) {
   @include with-grid-settings($break,13em, 2em) {
     h3 {
@@ -310,27 +325,18 @@ $icons : facebook twitter email play arrow;
     .revealed { @include span-columns(1); }
     .video { @include isolate-grid(1); }
 
-    #footer-ad { 
-      @include span-columns(2); 
-    }
-    #footer { 
-      @include span-columns(1 omega); 
-      padding-bottom: 0;
-      margin: 0 (-$spacing);
-
-      h2 { padding: 0}
-    }
   }
 
 }
 @include at-breakpoint(4) {
+
   h1{
     display: inline;
     float: left !important;
     @include span-columns(2 omega);
     padding: 2.5em 0 0 0;
-
   }
+
   .sl-logo{
     @include span-columns(1);
     display:block;
