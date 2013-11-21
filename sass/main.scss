@@ -285,7 +285,6 @@ $icons : facebook twitter email play arrow;
       @include span-columns($total-columns);
       h1{
          display: inline;
-        float: left !important;
         @include span-columns(2 omega);
         padding: 2.5em 0 0 0;
 
@@ -295,7 +294,7 @@ $icons : facebook twitter email play arrow;
         display:block;
         padding: 0em ;
         margin: 0em;
-        margin-right: -8em;
+        margin-right: -6em;
       }
     }
 
@@ -321,6 +320,23 @@ $icons : facebook twitter email play arrow;
 
       h2 { padding: 0}
     }
+  }
+
+}
+@include at-breakpoint(4) {
+  h1{
+    display: inline;
+    float: left !important;
+    @include span-columns(2 omega);
+    padding: 2.5em 0 0 0;
+
+  }
+  .sl-logo{
+    @include span-columns(1);
+    display:block;
+    padding: 0em ;
+    margin: 0em;
+    margin-right: -8em;
   }
 
 }

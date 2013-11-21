@@ -398,13 +398,12 @@ section, .featured {
   /* line 286, ../../sass/main.scss */
   #first-impressions h1 {
     display: inline;
-    float: left !important;
     width: 65.11628%;
     float: right;
     margin-right: 0;
     padding: 2.5em 0 0 0;
   }
-  /* line 293, ../../sass/main.scss */
+  /* line 292, ../../sass/main.scss */
   #first-impressions .sl-logo {
     width: 30.23256%;
     float: left;
@@ -412,42 +411,42 @@ section, .featured {
     display: block;
     padding: 0em;
     margin: 0em;
-    margin-right: -8em;
+    margin-right: -6em;
   }
 
-  /* line 302, ../../sass/main.scss */
+  /* line 301, ../../sass/main.scss */
   .social {
     width: 30.23256%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 306, ../../sass/main.scss */
+  /* line 305, ../../sass/main.scss */
   .social-icon {
     margin-right: 0.45em;
     width: 58px;
   }
 
-  /* line 310, ../../sass/main.scss */
+  /* line 309, ../../sass/main.scss */
   .tile {
     width: 30.23256%;
     float: left;
     margin-right: 4.65116%;
   }
-  /* line 310, ../../sass/main.scss */
+  /* line 309, ../../sass/main.scss */
   .tile:nth-child(2n+1) {
     float: left;
     margin-right: -100%;
   }
 
-  /* line 311, ../../sass/main.scss */
+  /* line 310, ../../sass/main.scss */
   .revealed {
     width: 30.23256%;
     float: left;
     margin-right: 4.65116%;
   }
 
-  /* line 312, ../../sass/main.scss */
+  /* line 311, ../../sass/main.scss */
   .video {
     width: 30.23256%;
     float: left;
@@ -470,14 +469,14 @@ section, .featured {
     clear: none;
   }
 
-  /* line 314, ../../sass/main.scss */
+  /* line 313, ../../sass/main.scss */
   #footer-ad {
     width: 65.11628%;
     float: left;
     margin-right: 4.65116%;
   }
 
-  /* line 317, ../../sass/main.scss */
+  /* line 316, ../../sass/main.scss */
   #footer {
     width: 30.23256%;
     float: right;
@@ -485,8 +484,30 @@ section, .featured {
     padding-bottom: 0;
     margin: 0 -2em;
   }
-  /* line 322, ../../sass/main.scss */
+  /* line 321, ../../sass/main.scss */
   #footer h2 {
     padding: 0;
+  }
+}
+@media (min-width: 43em) {
+  /* line 327, ../../sass/main.scss */
+  h1 {
+    display: inline;
+    float: left !important;
+    width: 48.83721%;
+    float: right;
+    margin-right: 0;
+    padding: 2.5em 0 0 0;
+  }
+
+  /* line 334, ../../sass/main.scss */
+  .sl-logo {
+    width: 23.25581%;
+    float: left;
+    margin-right: 2.32558%;
+    display: block;
+    padding: 0em;
+    margin: 0em;
+    margin-right: -8em;
   }
 }
