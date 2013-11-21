@@ -546,7 +546,7 @@ section, .featured {
 @media (min-width: 32em) {
   /* line 317, ../../sass/main.scss */
   #footer {
-    max-width: 41em;
+    max-width: 43em;
     padding-left: 2em;
     padding-right: 2em;
     margin-left: auto;
@@ -562,7 +562,7 @@ section, .featured {
 @media (min-width: 43em) {
   /* line 317, ../../sass/main.scss */
   #footer {
-    max-width: 46.75em;
+    max-width: 46.94em;
     padding-left: 2em;
     padding-right: 2em;
     margin-left: auto;

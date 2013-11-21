@@ -366,14 +366,14 @@ $icons : facebook twitter email play arrow;
   }
   @include at-breakpoint(3) {
 
-    @include with-grid-settings($break, 13.5em, 0.25em) {
+    @include with-grid-settings($break, 14em, 0.5em) {
       @include container;
 
     }
   }
   @include at-breakpoint(4) {
 
-    @include with-grid-settings(4, 11.5em, 0.25em) {
+    @include with-grid-settings(4, 11.36em, 0.5em) {
       @include container;
     }
   }
